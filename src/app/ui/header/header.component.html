@@ -1,0 +1,66 @@
+<header class="mat-typography">
+  <mat-toolbar class="toolbar mat-elevation-z3" color="primary">
+    <h1>{{ title }}</h1>
+    <button
+      class="menu"
+      mat-icon-button
+      aria-label="Menu button"
+      (click)="toggleForm()">
+      <mat-icon *ngIf="!formActive">menu</mat-icon>
+      <mat-icon *ngIf="formActive">close</mat-icon>
+    </button>
+    <form class="form d-flex f-wrap" [ngClass]="{ active: formActive }">
+      <div
+        *ngIf="$types | async as types"
+        class="custom-form-field my-1 mr-1 px-3 py-2">
+        <mat-label *ngIf="!typeSelect.value" class="mat-body-1"
+          >Select type</mat-label
+        >
+        <mat-select
+          id="types-select"
+          #typeSelect
+          [disabled]="!types.length"
+          (selectionChange)="onTypeChange($event)">
+          <mat-option [value]="null">All</mat-option>
+          <mat-option *ngFor="let type of types" [value]="type">{{
+            type
+          }}</mat-option>
+        </mat-select>
+      </div>
+      <div
+        *ngIf="$brands | async as brands"
+        class="custom-form-field my-1 mr-1 px-3 py-2">
+        <mat-label *ngIf="!brandSelect.value" class="mat-body-1"
+          >Select brand</mat-label
+        >
+        <mat-select
+          id="brands-select"
+          #brandSelect
+          [disabled]="!brands.length"
+          (selectionChange)="onBrandChange($event)">
+          <mat-option [value]="null">All</mat-option>
+          <mat-option *ngFor="let brand of brands" [value]="brand">{{
+            brand
+          }}</mat-option>
+        </mat-select>
+      </div>
+      <div
+        *ngIf="$colors | async as colors"
+        class="custom-form-field my-1 px-3 py-2">
+        <mat-label *ngIf="!colorSelect.value" class="mat-body-1"
+          >Select color</mat-label
+        >
+        <mat-select
+          id="colors-select"
+          #colorSelect
+          [disabled]="!colors.length"
+          (selectionChange)="onColorChange($event)">
+          <mat-option [value]="null">All</mat-option>
+          <mat-option *ngFor="let color of colors" [value]="color">{{
+            color
+          }}</mat-option>
+        </mat-select>
+      </div>
+    </form>
+  </mat-toolbar>
+</header>

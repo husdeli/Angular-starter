@@ -1,0 +1,50 @@
+@use './theme.scss';
+@use './colors';
+@import './mixins';
+
+@include spacing-builder('.pt-', 'padding-top');
+@include spacing-builder('.pb-', 'padding-bottom');
+@include spacing-builder('.pr-', 'padding-right');
+@include spacing-builder('.pl-', 'padding-left');
+@include spacing-builder('.p-', 'padding');
+@include spacing-builder('.px-', 'padding-left');
+@include spacing-builder('.px-', 'padding-right');
+@include spacing-builder('.py-', 'padding-top');
+@include spacing-builder('.py-', 'padding-bottom');
+
+@include spacing-builder('.mt-', 'margin-top');
+@include spacing-builder('.mb-', 'margin-bottom');
+@include spacing-builder('.mr-', 'margin-right');
+@include spacing-builder('.ml-', 'margin-left');
+@include spacing-builder('.m-', 'margin');
+@include spacing-builder('.mx-', 'margin-left');
+@include spacing-builder('.mx-', 'margin-right');
+@include spacing-builder('.my-', 'margin-top');
+@include spacing-builder('.my-', 'margin-bottom');
+
+:root {
+  --border-color: $gray-100;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}

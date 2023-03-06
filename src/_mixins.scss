@@ -1,0 +1,13 @@
+$max: 50;
+$offset: 5;
+$unit: 'rem';
+
+@mixin spacing-builder($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{calc($i * $offset / 16) + $unit};
+    }
+    $i: $i + 1;
+  }
+}

@@ -1,0 +1,7 @@
+<body>
+  <mat-progress-bar
+    [mode]="(isLoading$ | async) ? 'indeterminate' : 'determinate'"
+    [value]="100" />
+  <app-header />
+  <app-main />
+</body>

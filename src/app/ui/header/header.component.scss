@@ -1,0 +1,58 @@
+mat-toolbar {
+  display: flex;
+  padding: 20px 10px;
+  height: auto;
+  align-items: center;
+  h1 {
+    margin: 0;
+  }
+}
+
+.form {
+  &.active {
+    display: flex;
+  }
+}
+
+.menu {
+  display: none;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.custom-form-field {
+  font-weight: normal;
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+  min-width: 200px;
+  position: relative;
+  display: flex;
+  border: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  mat-label {
+    position: absolute;
+    left: 10px;
+    right: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .form {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
